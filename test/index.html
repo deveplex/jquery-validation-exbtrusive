@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+    <style type="text/css">
+        .validation-summary {
+            position: relative;
+            max-width: 100%;
+            text-overflow: clip;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .validation-summary-errors {
+            display: block;
+            padding: 5px;
+            border-width: 1px;
+            border-color: #d9534f;
+            color: #d9534f;
+            background-color: #fff;
+        }
+
+            .validation-summary-errors ul {
+                padding: 0;
+                white-space: normal;
+            }
+
+                .validation-summary-errors ul li::before {
+                    display: inline-block;
+                    font-family: cysicons;
+                    transform: translateY(1px);
+                    content: "";
+                }
+
+                .validation-summary-errors ul li + li {
+                }
+
+        .validation-message-error {
+            color: #d9534f;
+            padding: 0 15px;
+        }
+
+            .validation-message-error::before {
+                display: inline-block;
+                font-family: cysicons;
+                transform: translateY(1px);
+                content: "";
+            }
+    </style>
+</head>
+<body>
+    <header class="container navbar-fixed-top body-header "></header>
+    <div validation-summary-for="gggggggggg"></div>
+    <div class="container body-content ">
+        <br />
+        <section class="register-char" style="padding:100px 0;">
+            <form id="gggggggggg">
+                <validation-summary></validation-summary>
+                <div class="row register-row">
+                    <div class="col-xs-1 register-col" style="white-space:nowrap;">
+                        <label asp-for="RegisterAccount" class="">用户名：</label>
+                        <span class="input-flag">*</span>
+                    </div>
+                    <div class="col-xs-5 register-col">
+                        <input id="RegisterAccount" name="RegisterAccount" class="form-control register-username" placeholder="请输入用户名" data-val-required="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" minlength="4" maxlength="7" title="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" required />
+                    </div>
+                    <div class="col-xs-6 col register-col">
+                        <!--@*@Html.ActionLink("检查帐号是否可用", "", "", new { @id = "verifyAccountbtn", style = "vertical-align: bottom;font-zise:9px;color:#00f;" })*@-->
+                        <div validation-for="RegisterAccount">
+                        </div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col-xs-1 register-col" style="white-space:nowrap;">
+                        <label asp-for="LoginPassword">密码：</label>
+                        <span class="input-flag">*</span>
+                    </div>
+                    <div class="col-xs-5 register-col">
+                        <div class="input-group">
+                            <span class="input-group-addon fa fa-lock"></span>
+                            <input id="LoginPassword" name="LoginPassword" class="form-control register-password" placeholder="请输入密码" data-val-required="密码为6-18个字符。" title="密码为6-18个字符。" min="6" max="8" required />
+                        </div>
+                        <div class="passwordstrength" style="white-space:nowrap;">
+                            <div id="regWeak" class="ff0">
+                            </div>
+                            <div id="regMedium" class="ff0">
+                            </div>
+                            <div id="regStrong" class="ff0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 register-col">
+                        <div validation-for="LoginPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col-xs-1 register-col" style="white-space:nowrap;">
+                        <label asp-for="ConfirmPassword">确认密码：</label>
+                        <span class="input-flag">*</span>
+                    </div>
+                    <div class="col-xs-5 register-col">
+                        <input id="ConfirmPassword" name="ConfirmPassword" class="form-control register-confirmpassword" equalTo="#LoginPassword" placeholder="请输入确认密码" Title="确认密码与密码必须一致。" />
+                    </div>
+                    <div class="col-xs-6 register-col">
+                        <div validation-for="ConfirmPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col-xs-1 register-col" style="white-space:nowrap;">
+                        <label asp-for="ValidationEmail">邮箱：</label>
+                        <span class="input-flag">*</span>
+                    </div>
+                    <div class="col-xs-5 register-col">
+                        <div class="input-group">
+                            <span class="input-group-addon fa fa-envelope-o"></span>
+                            <input asp-for="ValidationEmail" name="email" class="form-control register-email" placeholder="请输入验证邮箱" regex="^(13|14|15|17|18)\d{9}$" data-val-regex="输入不正确" Title="将会发送一封电子邮件到此邮箱。" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6 register-col">
+                        <div validation-for="ValidationEmail">
+                        </div>
+                    </div>
+                </div>
+                <div class="row register-row">
+                    <div class="col-xs-1 register-col" style="white-space:nowrap;">
+                        <label asp-for="VerifyCode">验证码：</label>
+                        <span class="input-flag">*</span>
+                    </div>
+                    <div class="col-xs-5 register-col">
+                        <div class="row" style="white-space:nowrap;">
+                            <div class="col-xs-5 register-col">
+                                <input asp-for="VerifyCode" name="dddddddd" class="form-control register-verifycode" placeholder="验证码" title="如果看不清楚，请点击刷新。" />
+                            </div>
+                            <div class="col-xs-3 register-col">
+                                <img class="register-verifycode" src="" alt="看不清，刷新" />
+                            </div>
+                            <div class="col-xs-4 register-col">
+                                <a class="register-verifycode">看不清，刷新</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 register-col">
+                        <div validation-for="VerifyCode">
+                        </div>
+                    </div>
+                </div>
+                <div class="row register_row">
+                    <div class="col-xs-6 register_col">
+                        <div style="white-space: nowrap; margin: 10px;">
+                            <div class="checkbox-item">
+                                <label class="icon-font rectangle"><input type="checkbox" name="register$checkagree" id="register$checkagree" checked tabindex="7" data-options="{iconFont:'glyphicon glyphicon-ok'}" /></label>
+                                <label for="register$checkagree" class="">本人已阅读、理解并同意本站的<a href="" style="color: #f00;" title="That&apos;s what this widget is">会员注册协议</a></label>
+                            </div>
+                        </div>
+                        <div style="white-space: nowrap; margin: 10px;">
+                            <button name="action:register" class="btn btn-primary" type="submit">注册</button>
+                            <button id="register" name="action:register1" class="btn btn-primary" type="button">注册</button>
+                            <button name="action:reset" class="btn btn-default" type="reset">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div validation-summary=true></div>
+            </form>
+        </section>
+    </div>
+    <footer class="container navbar-fixed-bottom body-footer "></footer>
+    <validation></validation>
+    <validation-summary for="gggggggggg"></validation-summary>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../bower_components/jquery-validation/dist/jquery.validate.js"></script>
+<script src="./js/unobtrusive.js?oo=000000"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('form').validate({});
+
+        $('#register').on('click', function (e) {
+            if (!$('form').valid()) {
+                console.log('fffffffffffffffffffffffffffffffffffffffffff')
+            }
+        });
+    })
+</script>

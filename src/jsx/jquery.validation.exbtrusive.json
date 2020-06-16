@@ -1,0 +1,5 @@
+﻿[
+  "src/jsx/header.jsx",
+  "src/jsx/additional/unobtrusive.jsx",
+  "!src/jsx/additional/*.min.jsx"
+]

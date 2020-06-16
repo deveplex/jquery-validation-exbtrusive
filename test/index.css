@@ -1,0 +1,181 @@
+﻿body {
+}
+
+th, td {
+    min-width: 50px;
+    vertical-align: middle;
+}
+
+.placeholder {
+    overflow: hidden;
+    text-overflow: clip;
+    line-height: 1.42857143em;
+    vertical-align: middle;
+    color: #aaaaaa;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-break: normal;
+}
+
+.passwordstrength {
+    display: table;
+    width:100%;
+}
+
+.passwordstrength > * {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+}
+
+.ff0 {
+    *display: inline; /* IE6、7 block 元素 */
+    *zoom: 1;
+    border: 1px solid #eee;
+    height: 5px;
+}
+
+.Weak {
+    background-color: #f00;
+}
+
+.Medium {
+    background-color: #f80;
+}
+
+.Strong {
+    background-color: #0f0;
+}
+
+div#popup1 {
+    height: calc(100%);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/*glyphicon*/
+.radiobox-item .circle.glyphicon.checked {
+    /*background-color:#f80;
+    color:#ffffff;*/
+}
+
+    .radiobox-item .circle.glyphicon.checked:before {
+        /*font-size: 0.7em;*/
+    }
+
+.checkbox-item .rectangle.glyphicon.checked {
+    /*background-color:#f80;
+    color:#ffffff;*/
+}
+
+    .checkbox-item .rectangle.glyphicon.checked:before {
+    }
+/*fa*/
+.radiobox-item .circle.fa.checked {
+    /*background-color:#f80;
+    color:#ffffff;*/
+}
+
+    .radiobox-item .circle.fa.checked:before {
+        /*font-size: 0.7em;*/
+        transform: translate(0, 0);
+    }
+
+.checkbox-item .rectangle.fa.checked {
+    /*background-color:#f80;
+    color:#ffffff;*/
+}
+
+    .checkbox-item .rectangle.fa.checked:before {
+        transform: translate(0, 0);
+    }
+
+/*dialog*/
+.modal-open .modal-backdrop.dialog {
+    opacity: .2;
+}
+
+.modal-open .modal.dialog .modal-content .modal-dialog {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+    .modal-open .modal.dialog .modal-content .modal-dialog .modal-footer {
+        border-top-width: 0;
+        text-align: center;
+    }
+
+        .modal-open .modal.dialog .modal-content .modal-dialog .modal-footer .btn {
+            width: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 10px;
+            border-color: #3B7CD6;
+        }
+
+            .modal-open .modal.dialog .modal-content .modal-dialog .modal-footer .btn.confirm {
+                background-color: #3B7CD6;
+                border-color: #3B7CD6;
+            }
+
+            .modal-open .modal.dialog .modal-content .modal-dialog .modal-footer .btn.cancel {
+                border-color: #3B7CD6;
+            }
+
+            .modal-open .modal.dialog .modal-content .modal-dialog .modal-footer .btn.active {
+            }
+/*dialog full screen*/
+.modal-open .modal-backdrop.window {
+    opacity: .2;
+}
+
+.modal-open .modal.window .modal-content {
+    width: 100%;
+    height: 100%;
+}
+
+    .modal-open .modal.window .modal-content .modal-dialog .modal-body {
+        width: 100%;
+        height: calc(100% - 51px - 74px);
+    }
+
+    .modal-open .modal.window .modal-content .modal-dialog .modal-footer {
+        border-top-width: 0;
+        text-align: center;
+    }
+
+        .modal-open .modal.window .modal-content .modal-dialog .modal-footer .btn {
+            width: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 10px;
+            border-color: #3B7CD6;
+        }
+
+            .modal-open .modal.window .modal-content .modal-dialog .modal-footer .btn.confirm {
+                background-color: #3B7CD6;
+                border-color: #3B7CD6;
+            }
+
+            .modal-open .modal.window .modal-content .modal-dialog .modal-footer .btn.cancel {
+                border-color: #3B7CD6;
+            }
+
+            .modal-open .modal.window .modal-content .modal-dialog .modal-footer .btn.active {
+            }
+/*loading*/
+.modal-open .modal-backdrop.loading {
+    opacity: .2;
+}
+
+.modal-open .modal.loading .modal-content .modal-dialog {
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+    border: 0px solid rgba(0, 0, 0, .2);
+    border-radius: 0;
+    outline: 0;
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, .5);
+    pointer-events: auto;
+    overflow-y: auto;
+}

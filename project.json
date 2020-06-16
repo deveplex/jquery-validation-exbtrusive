@@ -1,0 +1,5 @@
+﻿{
+  "name": "jquery.validate.exbtrusive",
+  "approot": "src",
+  "wwwroot": "dist"
+}

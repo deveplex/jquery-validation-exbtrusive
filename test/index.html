@@ -66,7 +66,7 @@
                         <span class="input-flag">*</span>
                     </div>
                     <div class="col-xs-5 register-col">
-                        <input id="RegisterAccount" name="RegisterAccount" class="form-control register-username" placeholder="请输入用户名" data-val-required="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" minlength="4" maxlength="7" title="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" required />
+                        <input id="RegisterAccount" name="RegisterAccount" class="form-control register-username" placeholder="请输入用户名" data-required-msg="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" minlength="4" maxlength="7" title="以字母开头的5-25个字符，可以包含下划线，不得包含其它标点符号。" required />
                     </div>
                     <div class="col-xs-6 col register-col">
                         <!--@*@Html.ActionLink("检查帐号是否可用", "", "", new { @id = "verifyAccountbtn", style = "vertical-align: bottom;font-zise:9px;color:#00f;" })*@-->
@@ -82,7 +82,7 @@
                     <div class="col-xs-5 register-col">
                         <div class="input-group">
                             <span class="input-group-addon fa fa-lock"></span>
-                            <input id="LoginPassword" name="LoginPassword" class="form-control register-password" placeholder="请输入密码" data-val-required="密码为6-18个字符。" title="密码为6-18个字符。" min="6" max="8" required />
+                            <input id="LoginPassword" name="LoginPassword" class="form-control register-password" placeholder="请输入密码" data-required-msg="密码为6-18个字符。" title="密码为6-18个字符。" min="6" max="8" required />
                         </div>
                         <div class="passwordstrength" style="white-space:nowrap;">
                             <div id="regWeak" class="ff0">
@@ -104,7 +104,7 @@
                         <span class="input-flag">*</span>
                     </div>
                     <div class="col-xs-5 register-col">
-                        <input id="ConfirmPassword" name="ConfirmPassword" class="form-control register-confirmpassword" equalTo="#LoginPassword" placeholder="请输入确认密码" Title="确认密码与密码必须一致。" />
+                        <input id="ConfirmPassword" name="ConfirmPassword" class="form-control register-confirmpassword" equalTo="#LoginPassword" data-equalTo-msg="密码不一致"  placeholder="请输入确认密码" Title="确认密码与密码必须一致。" />
                     </div>
                     <div class="col-xs-6 register-col">
                         <div validation-for="ConfirmPassword">
@@ -177,8 +177,8 @@
 </html>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="../bower_components/jquery-validation/dist/jquery.validate.js"></script>
-<script src="./js/unobtrusive.js?oo=000000"></script>
+<script src="../bower_modules/jquery-validation/dist/jquery.validate.js"></script>
+<script src="../dist/jquery.validate.exbtrusive.js?oo=000000"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('form').validate({});

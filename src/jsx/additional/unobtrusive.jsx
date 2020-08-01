@@ -251,9 +251,13 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
                 rules[name] = true;
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
@@ -263,9 +267,13 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
                 rules[name] = true;
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
@@ -275,10 +283,14 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
-                rules[name] = true;
-                messages[name] = $(element).data(prefix);
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
+                rules[name] = $(element).attr(name);
+            }
+
+            var isData = typeof ($(element).data(prefix.toLowerCase()));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+                messages[name] = $(element).data(prefix.toLowerCase());
             }
         },
 
@@ -287,9 +299,13 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
                 rules[name] = true;
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
@@ -299,9 +315,13 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
                 rules[name] = true;
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
@@ -343,9 +363,14 @@
             //var prefix = "val-" + 'length';
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
-                rules[name] = [$(element).data(prefix + '-min') || 0, $(element).data(prefix + '-max') || 0];
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
+                //rules[name] = [$(element).data(prefix + '-min') || 0, $(element).data(prefix + '-max') || 0];
+                rules[name] = $(element).attr(name);
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
@@ -387,15 +412,32 @@
             //var prefix = "val-" + name;
             var prefix = name + "-msg";
 
-            var isAttr = typeof ($(element).data(prefix));
-            if (isAttr != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
-                rules[name] = [$(element).data(prefix + '-min') || 0, $(element).data(prefix + '-max') || 0];
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
+                //rules[name] = [$(element).data(prefix + '-min') || 0, $(element).data(prefix + '-max') || 0];
+                rules[name] = $(element).attr(name);
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
                 messages[name] = $(element).data(prefix);
             }
         },
 
         // http://jqueryvalidation.org/step-method/
         step: function (element, rules, messages, name) {
+            //var prefix = "val-" + name;
+            var prefix = name + "-msg";
+
+            var isAttr = typeof ($(element).attr(name));
+            if (isAttr != "undefined") {
+                rules[name] = $(element).attr(name);
+            }
+
+            var isData = typeof ($(element).data(prefix));
+            if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
+                messages[name] = $(element).data(prefix);
+            }
         },
 
         // http://jqueryvalidation.org/equalTo-method/
@@ -409,9 +451,9 @@
                 rules[name] = $(element).attr(name);
             }
 
-            var isData = typeof ($(element).data(prefix)) || typeof ($(element).data(prefix.toLowerCase()));
+            var isData = typeof ($(element).data(prefix.toLowerCase()));
             if (isData != "undefined") {  // Compare against undefined, because an empty message is legal (and falsy)
-                messages[name] = $(element).data(prefix) || $(element).data(prefix.toLowerCase());
+                messages[name] = $(element).data(prefix.toLowerCase());
             }
         },
 

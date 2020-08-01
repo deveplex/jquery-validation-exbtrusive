@@ -24,14 +24,14 @@ var optionset = {
     bower: "./bower.json",
     jsx: {
         src: [
-            'src/jsx/additional/*.jsx',
-            '!src/jsx/additional/*.min.jsx'
+            './src/jsx/additional/*.jsx',
+            '!./src/jsx/additional/*.min.jsx'
         ],
         dest: 'test/js'
     },
     clean: {
-        distDest: 'dist/*',
-        testDest: ['test/js/']
+        distDest: 'dist/',
+        testDest: ['./test/js/']
     },
     publish: {
         jsSrc: './src/jsx/jquery.validation.exbtrusive.json',
@@ -51,20 +51,18 @@ gulp.task('check:script', async () => {
 });
 
 //watch
-gulp.task('watch:jquery-validation-exbtrusive', () => {
+gulp.task('watch', () => {
     gulp.watch(optionset.jsx.src, gulp.series('check:script'));
 });
 
 //clean
-gulp.task('clean:jquery-validation-exbtrusive', async () => {
+gulp.task('clean', async () => {
     gulp.src(optionset.clean.distDest, { allowEmpty: true })
-        .pipe($.clean());
-    gulp.src(optionset.clean.testDest, { allowEmpty: true })
         .pipe($.clean());
 });
 
 //publish
-gulp.task('publish:jquery-validation-exbtrusive', async () => {
+gulp.task('publish', async () => {
 
     gulp.src(optionset.bower)
         .pipe(gulp.dest(optionset.publish.jsDest));
@@ -84,4 +82,4 @@ gulp.task('publish:jquery-validation-exbtrusive', async () => {
         .pipe(gulp.dest(optionset.publish.jsDest));
 });
 
-gulp.task('default', gulp.series(['clean:jquery-validation-exbtrusive', 'publish:jquery-validation-exbtrusive']));
+gulp.task('default', gulp.series(['clean', 'publish']));

@@ -36,7 +36,7 @@
 
             var container = $("body").find("[validation-summary-for=" + $(this).attr("id") + "], validation-summary[for=" + $(this).attr("id") + "]");
 
-            $.each($(this).find("[validation-summary=true], validation-summary"), function (ix, it) {
+            $.each($(this).find("validation-summary, [validation-summary]"), function (ix, it) {
                 container.push(it);
             });
             $.each($(this).find("[data-valmsg-summary=true]"), function (ix, it) {

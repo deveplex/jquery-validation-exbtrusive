@@ -8,10 +8,9 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     path = require('path'),
-    project = require('./project.json'),
-    pkg = require('./bower.json');
+    pkg = require('./package.json');
 
-project.fileName = project.name.replace(/-/g, '.');
+var fileName = pkg.name.replace(/-/g, '.');
 
 var optionset = {
     banner: ['/**',
@@ -36,7 +35,7 @@ var optionset = {
     publish: {
         jsSrc: './src/jsx/jquery.validation.exbtrusive.json',
         jsDest: 'dist/',
-        concat: '' + project.fileName + '.js'
+        concat: '' + fileName + '.js'
     }
 };
 

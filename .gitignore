@@ -192,6 +192,7 @@ ClientBin/
 node_modules/
 dist/
 lib/
+bower_modules/
 bower_components/
 test/css/
 orleans.codegen.cs

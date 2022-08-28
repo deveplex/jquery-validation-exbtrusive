@@ -1,13 +1,43 @@
 {
+  "name": "jquery-validation-exbtrusive",
+  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "version": "1.3.1",
+  "homepage": "https://github.com/jquery/jquery-validation-unobtrusive",
+  "author": {
+    "name": "virtual",
+    "email": "virtual@deveplex.com",
+    "url": "http://bootcss.com"
+  },
+  "main": "dist/jquery.validate.exbtrusive.js",
+  "bugs": {
+    "url": "https://github.com/deveplex/jquery-validation-unobtrusive/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "jquery-validation-unobtrusive",
+    "javascript",
+    "browser",
+    "library"
+  ],
+  "license": "Apache License v2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deveplex/jquery-validation-exbtrusive.git"
+  },
   "private": true,
   "scripts": {
     "dist": "gulp --gulpfile gulpfile.js",
     "build": "npm run dist"
   },
   "devDependencies": {
-    "gulp": "4.0.0",
-    "gulp-load-plugins": "1.5.0",
-    "gulp-babel": "7.0.1",
+    "gulp": "^4.0.0",
+    "gulp-load-plugins": "^2.0.0",
+    "gulp-babel": "^7.0.0",
     "gulp-clean": "0.4.0",
     "gulp-rename": "1.4.0",
     "gulp-header": "2.0.5",
@@ -22,7 +52,6 @@
     "jshint": "2.9.6",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-env": "1.7.0",
-    "babel-core": "6.26.3",
     "@babel/core": "7.1.2"
   }
 }

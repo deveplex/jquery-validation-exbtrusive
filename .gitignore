@@ -189,6 +189,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 *.config
+package-lock.json
 node_modules/
 dist/
 lib/
